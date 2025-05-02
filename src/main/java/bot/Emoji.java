@@ -1,4 +1,4 @@
-package bot.util;
+package bot;
 
 public class Emoji {
     public static final String SUN = "\u2600️";
