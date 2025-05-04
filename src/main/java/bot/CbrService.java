@@ -33,6 +33,7 @@ public class CbrService {
             String rsd = getCurrencyRate(doc, "RSD");
             String nzd = getCurrencyRate(doc, "NZD");
             String amd = getCurrencyRate(doc, "AMD");
+            String TRY = getCurrencyRate(doc, "TRY");
 
             String date = LocalDate.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
 
@@ -49,8 +50,8 @@ public class CbrService {
                 🇬🇪 GEL: %s ₽
                 🇷🇸 100 RSD: %s ₽
                 🇦🇲 100 AMD: %s ₽
-                
-                """, date, usd, eur, gbp, jpy,cny,cad,aud,nzd,gel,rsd,amd);
+                🇹🇷 10 TRY : %s ₽
+                """, date, usd, eur, gbp, jpy,cny,cad,aud,nzd,gel,rsd,amd,TRY);
 
         } catch (Exception e) {
             return "Ошибка получения курсов валют с сайта ЦБ РФ.";
@@ -81,4 +82,3 @@ public class CbrService {
         return "—";
     }
 }
-
