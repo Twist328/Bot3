@@ -26,6 +26,13 @@ public class CbrService {
             String eur = getCurrencyRate(doc, "EUR");
             String gbp = getCurrencyRate(doc, "GBP");
             String jpy = getCurrencyRate(doc, "JPY");
+            String cny = getCurrencyRate(doc, "CNY");
+            String cad = getCurrencyRate(doc, "CAD");
+            String aud = getCurrencyRate(doc, "AUD");
+            String gel = getCurrencyRate(doc, "GEL");
+            String rsd = getCurrencyRate(doc, "RSD");
+            String nzd = getCurrencyRate(doc, "NZD");
+            String amd = getCurrencyRate(doc, "AMD");
 
             String date = LocalDate.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
 
@@ -35,7 +42,15 @@ public class CbrService {
                 🇪🇺 EUR: %s ₽
                 🇬🇧 GBP: %s ₽
                 🇯🇵 100 JPY: %s ₽
-                """, date, usd, eur, gbp, jpy);
+                🇨🇳 CNY: %s ₽
+                🇨🇦 CAD: %s ₽
+                🇦🇺 AUD: %s ₽
+                🇳🇿 NZD: %s ₽
+                🇬🇪 GEL: %s ₽
+                🇷🇸 100 RSD: %s ₽
+                🇦🇲 100 AMD: %s ₽
+                
+                """, date, usd, eur, gbp, jpy,cny,cad,aud,nzd,gel,rsd,amd);
 
         } catch (Exception e) {
             return "Ошибка получения курсов валют с сайта ЦБ РФ.";
