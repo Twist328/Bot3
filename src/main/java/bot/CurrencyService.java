@@ -1,6 +1,6 @@
 package bot;
 
-import java.time.LocalDateTime;
+/*import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
 
@@ -22,4 +22,4 @@ public class CurrencyService {
         String time = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm"));
         return String.format("💱 Курс %s: %.2f RUB\\n🕒 %s", upper, fakeRates.get(upper), time);
     }
-}
+}*/

@@ -42,14 +42,13 @@ public class WeatherService {
             };
 
             return String.format(Locale.ROOT,
-                    "%s 📍 Город: %s\n🌡 Температура: %.1f°C\n💧 Влажность: %d%%\n🌥️ Погода: %s\n%s",
-                    emoji, name, temp, humidity, capitalize(description), getIconUrl(icon));
+                    "%s 📍 Город: %s\n🌡 Температура: %.1f°C\n💧 Влажность: %d%%\n🌥️ Погода: %s\n\n<a href=\"https://openweathermap.org\">Источник</a>",
+                    emoji, name, temp, humidity, capitalize(description));
 
         } catch (IOException e) {
             return "❌ Не удалось найти город: " + cityInput + "\nПопробуйте ввести название иначе.";
         }
     }
-
     public String getGifForIcon() {
         if (lastIconCode == null || lastIconCode.isEmpty()) return null;
 
@@ -67,7 +66,17 @@ public class WeatherService {
         return input.substring(0, 1).toUpperCase() + input.substring(1);
     }
 
-    private String getIconUrl(String icon) {
-        return "http://openweathermap.org/img/w/" + icon + ".png";
+    private String getEmojiForDescription(String description) {
+        return switch (description.toLowerCase()) {
+            case "ясно" -> "☀️";
+            case "небольшая облачность" -> "🌤️";
+            case "переменная облачность", "облачно с прояснениями" -> "⛅";
+            case "пасмурно", "пасмурная погода" -> "☁️";
+            case "дождь", "небольшой дождь", "ливень" -> "🌧️";
+            case "гроза" -> "⛈️";
+            case "снег", "небольшой снег" -> "❄️";
+            case "туман", "дымка" -> "🌫️";
+            default -> "🌈";
+        };
     }
 }
