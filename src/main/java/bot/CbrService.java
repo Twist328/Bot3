@@ -34,7 +34,8 @@ public class CbrService {
             String nzd = getCurrencyRate(doc, "NZD");
             String amd = getCurrencyRate(doc, "AMD");
             String TRY = getCurrencyRate(doc, "TRY");
-
+            String vnd = getCurrencyRate(doc, "VND");
+            String kzt = getCurrencyRate(doc, "KZT");
             String date = LocalDate.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
 
             return String.format("""
@@ -51,7 +52,9 @@ public class CbrService {
                 🇷🇸 100 RSD: %s ₽
                 🇦🇲 100 AMD: %s ₽
                 🇹🇷 10 TRY : %s ₽
-                """, date, usd, eur, gbp, jpy,cny,cad,aud,nzd,gel,rsd,amd,TRY);
+                🇻🇳 10000 VND : %s ₽
+                🇰🇿 KZT : %s ₽
+                """, date, usd, eur, gbp, jpy,cny,cad,aud,nzd,gel,rsd,amd,TRY,vnd,kzt);
 
         } catch (Exception e) {
             return "Ошибка получения курсов валют с сайта ЦБ РФ.";
