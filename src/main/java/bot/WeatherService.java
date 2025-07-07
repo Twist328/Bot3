@@ -42,7 +42,7 @@ public class WeatherService {
             };
 
             return String.format(Locale.ROOT,
-                    "%s 📍 Город: %s\n🌡 Температура: %.1f°C\n💧 Влажность: %d%%\n🌥️ Погода: %s\n\n<a href=\"https://openweathermap.org\">Источник</a>",
+                    "%s 📍 Город: %s\n🌡 Температура: %.1f°C\n💧 Влажность: %d%%\n🌥️ Погода: %s\n\n<a href=\"https://openweathermap.org\">Источник : Shevelev ❄️климатбот☀️ </a>",
                     emoji, name, temp, humidity, capitalize(description));
 
         } catch (IOException e) {

@@ -69,7 +69,7 @@ public class BotCommandHandler {
 
             case "TIME" -> {
                 sendGif(chatId, "⏰ Текущее время:", "src/main/resources/animations/G9dTM.gif");
-                String timeText = "🕒 " + LocalTime.now().withSecond(0).format(DateTimeFormatter.ofPattern("HH:mm"));
+                String timeText = "🕒 " + LocalTime.now().withSecond(0).format(DateTimeFormatter.ofPattern("HH:mm"))+ "  MCK";
                 SendMessage msg = SendMessage.builder()
                         .chatId(chatId)
                         .text(timeText)
